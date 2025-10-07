@@ -44,28 +44,36 @@ npm run preview
 
 ### Автоматический деплой на GitHub Pages
 
-1. **Создание Personal Access Token:**
-   - Перейдите в Settings → Developer settings → Personal access tokens → Tokens (classic)
-   - Нажмите "Generate new token (classic)"
-   - Выберите права: `repo` (Full control of private repositories)
-   - Скопируйте созданный токен
+1. **Создание SSH ключа (если нет):**
+   ```bash
+   ssh-keygen -t ed25519 -C "your-email@example.com"
+   ```
+   - Нажмите Enter для сохранения в стандартную папку
+   - Введите пароль (или оставьте пустым)
 
-2. **Добавление токена в Secrets:**
+2. **Добавление публичного ключа в GitHub:**
+   - Скопируйте публичный ключ: `cat ~/.ssh/id_ed25519.pub`
+   - Перейдите в Settings → SSH and GPG keys
+   - Нажмите "New SSH key"
+   - Вставьте публичный ключ
+
+3. **Добавление приватного ключа в Secrets:**
+   - Скопируйте приватный ключ: `cat ~/.ssh/id_ed25519`
    - Перейдите в Settings → Secrets and variables → Actions
    - Нажмите "New repository secret"
-   - Name: `PAT_TOKEN`
-   - Value: вставьте скопированный токен
+   - Name: `SSH_PRIVATE_KEY`
+   - Value: вставьте приватный ключ (включая `-----BEGIN` и `-----END`)
 
-3. **Настройка GitHub Pages:**
+4. **Настройка GitHub Pages:**
    - Перейдите в Settings → Pages
    - В разделе "Source" выберите "Deploy from a branch"
    - Выберите ветку `gh-pages` и папку `/ (root)`
 
-4. **Запуск деплоя:**
+5. **Запуск деплоя:**
    - При пуше в ветку `main` автоматически запустится деплой
    - Или запустите вручную через Actions → Deploy to GitHub Pages
 
-5. **Результат:**
+6. **Результат:**
    - Приложение будет доступно по адресу: `https://[username].github.io/test-applied-logistics/`
 
 ## Структура проекта
