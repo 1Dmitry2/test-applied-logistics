@@ -42,31 +42,9 @@ npm run preview
 
 ## Деплой
 
-### Автоматический деплой на GitHub Pages
+Приложение автоматически деплоится на GitHub Pages при пуше в ветку `main`.
 
-1. **Создание Personal Access Token:**
-   - Перейдите в Settings → Developer settings → Personal access tokens → Tokens (classic)
-   - Нажмите "Generate new token (classic)"
-   - Выберите права: `repo` (Full control of private repositories)
-   - Скопируйте созданный токен
-
-2. **Добавление токена в Secrets:**
-   - Перейдите в Settings → Secrets and variables → Actions
-   - Нажмите "New repository secret"
-   - Name: `PAT_TOKEN`
-   - Value: вставьте скопированный токен
-
-3. **Настройка GitHub Pages:**
-   - Перейдите в Settings → Pages
-   - В разделе "Source" выберите "Deploy from a branch"
-   - Выберите ветку `gh-pages` и папку `/ (root)`
-
-4. **Запуск деплоя:**
-   - При пуше в ветку `main` автоматически запустится деплой
-   - Или запустите вручную через Actions → Deploy to GitHub Pages
-
-5. **Результат:**
-   - Приложение будет доступно по адресу: `https://[username].github.io/test-applied-logistics/`
+**Демо:** [https://1dmitry2.github.io/test-applied-logistics/](https://1dmitry2.github.io/test-applied-logistics/)
 
 ## Структура проекта
 
