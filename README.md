@@ -48,15 +48,21 @@ npm run preview
    - Перейдите в Settings → Pages
    - В разделе "Source" выберите "GitHub Actions"
 
-2. **Два варианта workflow:**
-   - `deploy.yml` - стандартный GitHub Actions workflow (требует предварительной настройки Pages)
-   - `deploy-simple.yml` - упрощенный workflow (работает без предварительной настройки)
+2. **Три варианта workflow:**
+   - `deploy-gh-pages.yml` - официальный GitHub Actions workflow (рекомендуется)
+   - `deploy-simple.yml` - упрощенный workflow с peaceiris/actions-gh-pages
+   - `deploy-pat.yml` - workflow с Personal Access Token (требует настройки PAT)
 
 3. **Запуск деплоя:**
    - При пуше в ветку `main` автоматически запустится деплой
    - Или запустите вручную через Actions → Deploy to GitHub Pages
 
-4. **Результат:**
+4. **Настройка PAT токена (для deploy-pat.yml):**
+   - Перейдите в Settings → Developer settings → Personal access tokens → Tokens (classic)
+   - Создайте новый токен с правами: `repo`, `workflow`, `write:packages`
+   - Добавьте токен в Secrets репозитория как `PAT_TOKEN`
+
+5. **Результат:**
    - Приложение будет доступно по адресу: `https://[username].github.io/test-applied-logistics/`
 
 ## Структура проекта
