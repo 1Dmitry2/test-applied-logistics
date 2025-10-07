@@ -59,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, onMounted } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { useEventLogger } from '../composables/useEventLogger'
 import { useLocalStorage } from '../composables/useLocalStorage'
 
@@ -77,7 +77,7 @@ const quantity = ref<number>(0)
 const amount = ref<number>(0)
 const isSubmitting = ref<boolean>(false)
 
-let debounceTimer: NodeJS.Timeout | null = null
+let debounceTimer: number | null = null
 
 const debounce = (func: Function, delay: number) => {
   return (...args: any[]) => {

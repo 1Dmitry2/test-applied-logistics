@@ -37,7 +37,22 @@ npm run preview
 
 ## Деплой
 
-Приложение автоматически деплоится на GitHub Pages при пуше в ветку `main`.
+### Автоматический деплой на GitHub Pages
+
+1. **Настройка репозитория:**
+   - Перейдите в Settings → Pages
+   - В разделе "Source" выберите "GitHub Actions"
+
+2. **Два варианта workflow:**
+   - `deploy.yml` - стандартный GitHub Actions workflow (требует предварительной настройки Pages)
+   - `deploy-simple.yml` - упрощенный workflow (работает без предварительной настройки)
+
+3. **Запуск деплоя:**
+   - При пуше в ветку `main` автоматически запустится деплой
+   - Или запустите вручную через Actions → Deploy to GitHub Pages
+
+4. **Результат:**
+   - Приложение будет доступно по адресу: `https://[username].github.io/test-applied-logistics/`
 
 ## Структура проекта
 

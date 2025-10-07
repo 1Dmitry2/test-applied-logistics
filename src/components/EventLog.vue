@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { } from 'vue'
 import { useEventLogger, type EventData } from '../composables/useEventLogger'
 
 const { events } = useEventLogger()
@@ -47,9 +47,8 @@ const formatTime = (timestamp: Date): string => {
   return timestamp.toLocaleTimeString('ru-RU', {
     hour: '2-digit',
     minute: '2-digit',
-    second: '2-digit',
-    millisecond: '3-digit'
-  })
+    second: '2-digit'
+  }) + '.' + timestamp.getMilliseconds().toString().padStart(3, '0')
 }
 
 const formatEventData = (event: EventData): string => {
